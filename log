@@ -1,16 +1,14 @@
-[program started on Fri Dec 18 21:03:48 2015] 
+[program started on Fri Dec 18 21:32:03 2015] 
 [command line arguments] 
 oup gray.png 
 LR 0.1 
 theta 45 
-inp ../images/07.png 
-maxiter 2000 
-optimAlgo cg 
+cuda true 
 momentum 0.5 
+optimAlgo cg 
+alpha 10 
+inp ../images/07.png 
 batchsize 1 
 test false 
-alpha 10 
+maxiter 2000 
 [----------------------] 
-image size: 223x311
------------------- 
-the result saved to gray.png 

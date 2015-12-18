@@ -1,14 +1,14 @@
 require 'torch'
 require 'paths'
 paths.dofile('opts.lua')
+if opts.cuda then
+    require 'cutorch'
+end
 require 'image'
-
---require 'cunn'
 torch.setdefaulttensortype('torch.FloatTensor')
 
 local rgbImg = image.load(opts.inp)
-local labImg = image.rgb2lab(rgbImg)--:cuda()
---local labImg = rgbImg
+local labImg = image.rgb2lab(rgbImg)
 print(string.format('image size: %dx%d\n------------------', labImg:size(2), labImg:size(3)))
 
 -- create the model and training criterion

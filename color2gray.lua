@@ -4,6 +4,9 @@ require 'optim'
 function color2gray(labImg, init, model, criterion, silent)
 
     silent = silent or false
+    if opts.cuda then
+        labImg = labImg:cuda()
+    end
 
     -- compute the distances
     require 'dist'
