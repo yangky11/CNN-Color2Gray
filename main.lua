@@ -1,9 +1,8 @@
 require 'torch'
 require 'paths'
-require 'optim'
 paths.dofile('opts.lua')
 require 'image'
-require 'nn'
+
 --require 'cunn'
 torch.setdefaulttensortype('torch.FloatTensor')
 
@@ -16,27 +15,9 @@ print(string.format('image size: %dx%d\n------------------', labImg:size(2), lab
 paths.dofile('model.lua')
 model, criterion = createModel()
 
--- compute the distances
-paths.dofile('dist.lua')
-local delta = dist(labImg)
+require 'color2gray'
+local gray = color2gray(labImg, torch.mean(rgbImg, 1), model, criterion)
 
--- define the loss function to optimize
-local function loss(x)
-    local output = model:forward(x)
-    local f = criterion:forward(output, delta)
-    model:backward(x, criterion:backward(output, delta))
-    return f, model.gradInput
-end
 
--- train the model
-optimState = {
-    learningRate = opts.LR,
-    momentum = opts.momentum,
-}
-local gray = torch.mean(rgbImg, 1)
-for i = 1, opts.iter do
-    local _, err = opts.optimAlgo(loss, gray, optimState)
-    print(err[1])
-end
-
+print(string.format('the result saved to %s', opts.oup))
 image.save(opts.oup, gray)

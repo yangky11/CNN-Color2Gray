@@ -3,6 +3,7 @@ function test(img, delta)
          and img:size(1) == delta:size(2) and img:size(2) == delta:size(3))
     local height = img:size(1)
     local width = img:size(2)
+    local eps = 1e-5
     for i = 1, 8 do
         if i == 1 then
             u, v = -1, -1
@@ -24,7 +25,7 @@ function test(img, delta)
         for j = 1, height do
             for k = 1, width do
                 if 1 <= j + u and j + u <= height and 1 <= k + v and k + v <= height then
-                    assert(delta[{i, j, k}] == img[{j, k}] - img[{j + u, k + v}]
+                    assert(torch.abs(delta[{i, j, k}] - img[{j, k}] + img[{j + u, k + v}]) < eps
                             , string.format('testing failed: %f ~= %f', delta[{i, j, k}], img[{j, k}] - img[{j + u, k + v}]))
                 end
             end

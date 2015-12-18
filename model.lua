@@ -1,3 +1,4 @@
+require 'nn'
 --require 'cudnn'
 
 
@@ -17,9 +18,8 @@ function createModel()
     conv.weight[{8, 1, 3, 3}] = -1
     conv.bias:zero()
     --conv:resetWeightDescriptors() 
-    print(conv.weight)
     
-    local criterion = nn.MSECriterion()
+    local criterion = nn.MSECriterion(true)
     --model:cuda()
     --criterion:cuda()
     return conv, criterion
