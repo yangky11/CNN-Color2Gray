@@ -1,14 +1,21 @@
-[program started on Fri Dec 18 21:32:03 2015] 
+[program started on Sat Dec 19 16:18:08 2015] 
 [command line arguments] 
 oup gray.png 
 LR 0.1 
 theta 45 
-cuda true 
+cuda false 
 momentum 0.5 
-optimAlgo cg 
+inp ./images/06.jpg 
+optimAlgo rmsprop 
 alpha 10 
-inp ../images/07.png 
+miniter 100 
+webcam true 
 batchsize 1 
 test false 
-maxiter 2000 
+maxiter 100 
 [----------------------] 
+  720
+ 1280
+    3
+[torch.LongStorage of size 3]
+ 

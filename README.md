@@ -7,5 +7,5 @@ This is an implementation of [Color2Gray](http://www.cs.northwestern.edu/~ago820
 
 ## Usage
 
-    th main.lua -h  
-    th main.lua -inp /path/to/input/color/image   
+    qlua main.lua -h  
+    qlua main.lua -inp /path/to/input/color/image   
