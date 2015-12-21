@@ -1,21 +1,32 @@
-[program started on Sat Dec 19 16:18:08 2015] 
+[program started on Mon Dec 21 17:53:24 2015] 
 [command line arguments] 
 oup gray.png 
 LR 0.1 
 theta 45 
 cuda false 
 momentum 0.5 
-inp ./images/06.jpg 
-optimAlgo rmsprop 
+inp ./color.png 
+optimAlgo cg 
 alpha 10 
-miniter 100 
-webcam true 
+miniter 10 
+webcam false 
 batchsize 1 
 test false 
-maxiter 100 
+maxiter 2000 
 [----------------------] 
-  720
- 1280
-    3
-[torch.LongStorage of size 3]
- 
+image size: 223x311
+------------------ 
+32.02677154541 
+5.3820643424988 
+4.1118364334106 
+3.1892559528351 
+2.8391959667206 
+2.7098784446716 
+2.7098784446716 
+2.7098784446716 
+2.7098784446716 
+2.7098784446716 
+
+loss failed to decrease, stopped earlier 
+final loss: 2.709878 
+the result saved to gray.png 

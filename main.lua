@@ -38,6 +38,9 @@ else
     local gray = color2gray(rgbImg, model, criterion)
     print(string.format('the result saved to %s', opts.oup))
     image.save(opts.oup, gray)
-    image.display(rgbImg)
-    image.display(gray)
+    local status, _ = pcall(function() require 'qlua' end)
+    if status == true then
+        image.display(rgbImg)
+        image.display(gray)
+    end
 end
