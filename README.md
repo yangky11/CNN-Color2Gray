@@ -21,4 +21,4 @@ Color2Gray
     qlua main.lua -h
     qlua main.lua -inp ./color.png  
 
-You can also use `th` but then no images will be displayed.
+You can also use `th` but then no image will be displayed.
