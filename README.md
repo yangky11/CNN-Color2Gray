@@ -8,13 +8,13 @@ This is an implementation of [Color2Gray](http://www.cs.northwestern.edu/~ago820
 ## Example
 
 original image  
-![color](https://github.com/yangky11/CNN-Color2Gray/blob/master/color.png)  
+![color](https://raw.githubusercontent.com/yangky11/CNN-Color2Gray/master/color.png)  
 
 naive color transformation  
-![naive](https://github.com/yangky11/CNN-Color2Gray/blob/master/naive.png)  
+![naive](https://raw.githubusercontent.com/yangky11/CNN-Color2Gray/master/naive.png)  
 
 Color2Gray  
-![gray](https://github.com/yangky11/CNN-Color2Gray/blob/master/gray.png)
+![gray](https://raw.githubusercontent.com/yangky11/CNN-Color2Gray/master/gray.png)
 
 ## Usage
 
