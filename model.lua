@@ -3,9 +3,12 @@ require 'nn'
 
 function createModel()
     local conv
+    local criterion = nn.MSECriterion(true)
     if opts.cuda then
         require 'cudnn'
         conv = cudnn.SpatialConvolution(1, 8, 3, 3, 1, 1, 1, 1)
+        conv:cuda()
+        criterion:cuda()
     else
         conv = nn.SpatialConvolution(1, 8, 3, 3, 1, 1, 1, 1)
     end
@@ -23,13 +26,7 @@ function createModel()
     conv.bias:zero()
     if opts.cuda then
         conv:resetWeightDescriptors() 
-    end
-    
-    local criterion = nn.MSECriterion(true)
-    if opts.cuda then
-        conv:cuda()
-        criterion:cuda()
-    end
+    end 
     
     return conv, criterion
 end

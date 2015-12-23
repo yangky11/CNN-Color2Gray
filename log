@@ -1,33 +1,27 @@
-[program started on Wed Dec 23 20:00:57 2015] 
+[program started on Wed Dec 23 20:54:55 2015] 
 [command line arguments] 
 oup gray.png 
 LR 0.1 
 theta 45 
 cuda false 
 momentum 0.5 
-inp images/07.png 
+inp images/01.png 
 optimAlgo cg 
 alpha 10 
-miniter 10 
+miniter 2 
 webcam false 
 batchsize 1 
 test false 
-maxiter 2000 
+maxiter 6 
 [----------------------] 
-image size: 223x311
+image size: 992x1000
 ------------------ 
-32.02677154541 
-5.3820643424988 
-4.1118364334106 
-3.1892559528351 
-2.8391959667206 
-2.7098784446716 
-2.7098784446716 
-2.7098784446716 
-2.7098784446716 
-2.7098784446716 
-
-loss failed to decrease, stopped earlier 
-final loss: 2.709878 
-time elapsed: 1.586645sec 
+67.281593322754 
+8.5927209854126 
+6.3530778884888 
+5.4371676445007 
+5.4371676445007 
+5.4371676445007 
+final loss: 5.437168 
+time elapsed: 12.627068sec 
 the result saved to gray.png 
