@@ -5,6 +5,7 @@ function createModel()
     local conv
     local criterion = nn.MSECriterion(true)
     if opts.cuda then
+        require 'cunn'
         require 'cudnn'
         conv = cudnn.SpatialConvolution(1, 8, 3, 3, 1, 1, 1, 1)
         conv:cuda()
