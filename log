@@ -1,11 +1,11 @@
-[program started on Mon Dec 21 17:53:24 2015] 
+[program started on Wed Dec 23 19:41:51 2015] 
 [command line arguments] 
 oup gray.png 
 LR 0.1 
 theta 45 
 cuda false 
 momentum 0.5 
-inp ./color.png 
+inp images/07.png 
 optimAlgo cg 
 alpha 10 
 miniter 10 

@@ -7,7 +7,8 @@ function color2gray(rgbImg, model, criterion, silent)
     if opts.cuda then
         labImg = labImg:cuda()
     end
-    
+    local timer = torch.Timer()   
+ 
     local labImg = image.rgb2lab(rgbImg)
 
     -- compute the distances
@@ -45,7 +46,10 @@ function color2gray(rgbImg, model, criterion, silent)
         if not silent then xlua.progress(i, opts.maxiter) end
         print(err[1])
     end
-    if not silent then print(string.format('final loss: %f', errors[#errors])) end
+    if not silent then 
+        print(string.format('final loss: %f', errors[#errors])) 
+        print(string.format('time elapsed: %fsec', timer:time().real))
+    end
     
     -- normalize the result
     gray:add(-gray:min())
