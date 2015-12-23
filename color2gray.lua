@@ -4,12 +4,12 @@ require 'optim'
 function color2gray(rgbImg, model, criterion, silent)
 
     silent = silent or false
-    if opts.cuda then
-        labImg = labImg:cuda()
-    end
     local timer = torch.Timer()   
  
     local labImg = image.rgb2lab(rgbImg)
+    if opts.cuda then
+        labImg = labImg:cuda()
+    end
 
     -- compute the distances
     require 'dist'
@@ -31,6 +31,9 @@ function color2gray(rgbImg, model, criterion, silent)
         momentum = opts.momentum,
     }
     local gray = torch.mean(rgbImg, 1)
+    if opts.cuda then
+        gray = gray:cuda()
+    end
     local errors = {}
     local cnt = 0
     for i = 1, opts.maxiter do

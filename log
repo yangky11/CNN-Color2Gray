@@ -1,4 +1,4 @@
-[program started on Wed Dec 23 19:41:51 2015] 
+[program started on Wed Dec 23 20:00:57 2015] 
 [command line arguments] 
 oup gray.png 
 LR 0.1 
@@ -29,4 +29,5 @@ image size: 223x311
 
 loss failed to decrease, stopped earlier 
 final loss: 2.709878 
+time elapsed: 1.586645sec 
 the result saved to gray.png 
